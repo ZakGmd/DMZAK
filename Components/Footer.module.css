@@ -1,0 +1,31 @@
+.Footer{
+    display: flex;
+    width: 100vw ;
+    height: 40px;
+    box-shadow: rgb(219, 219, 219) 2px 2px 0px 0px inset, rgb(128, 128, 128) -2px -2px 0px 0px inset, rgb(255, 255, 255) 1px 1px 0px 0px inset, rgb(0, 0, 0) -1px -1px 0px 0px inset;
+    background: rgb(191, 191, 191);
+    
+}
+.FooterContainer{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 8px 8px 8px ;
+
+}
+.FooterContainerLeft{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+.FooterContainerLeftItem{
+    text-decoration: none;
+    color: #000;
+    font-family: MS Sans Serif;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
