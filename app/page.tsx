@@ -1,6 +1,7 @@
 "use client"
 import Footer from '@/Components/Footer'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './page.module.css'
 import { UserData } from './types/type'
 import { useState } from 'react';
@@ -20,22 +21,20 @@ export default function Home() {
   return (
     <>
      <main className={styles.main}>
-      <div className={styles.Button}>
-        <Link href={'/'} className={styles.link}>Click</Link>
-       
-      </div>
-      {receivedData && (
-        <div className={styles.Data}>
+        <div className={styles.LeftContent}>
+          <div className={styles.LeftContentItems}>
+
+            <div className={styles.LeftContentItems}>
+            <div className={styles.LeftContentInsideItemsName}>
+              Firstname
+            </div>
+            <Image src="/UserAvatar.svg" alt={'..'} height={24} width={24} />
+            </div>
+          </div>
           
-         
-            {receivedData.map((item) => (
-              <div key={item.id}>
-                {item.first} {item.last}
-              </div>
-            ))}
           
         </div>
-      )}
+     
     </main>
     <Footer onData={dataLoaded}/>
     </>

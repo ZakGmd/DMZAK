@@ -1,11 +1,62 @@
 .main {
- display: flex;
- justify-content: center;
- align-items: center;
 
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
  height: 100vh;
  
 }
+
+.LeftContent{
+  display: flex;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px 12px 0px 12px;
+  gap: 36px;
+  max-width: 140px;
+}
+
+.LeftContentItems{
+  width: 70px;
+  height: 80px;
+  background: #C0C0C0;
+  box-shadow: 2px 2px 0px 0px #DFDFDF inset, -2px -2px 0px 0px #808080 inset, 1px 1px 0px 0px #FFF inset, -1px -1px 0px 0px #0A0A0A inset;
+  display: flex;
+  gap: 16px;
+  justify-content: centers;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 29%, 86% 100%, 14% 100%, 0 29%);
+}
+.LeftContentItems:hover{
+  background: #989898;
+  -webkit-text-fill-color: #000;
+  
+  box-shadow: 2px 2px 0px 0px #989898 inset, -2px -2px 0px 0px #989898 inset, 1px 1px 0px 0px #989898 inset, -1px -1px 0px 0px #989898 inset;
+}
+.LeftContentItems:active{
+ border-top: 2px dashed #000;
+ border-bottom: 2px dashed #000;
+}
+
+.LeftContentInsideItemsName{
+  color:  #808080;
+  text-align: center;
+  text-shadow: 0.4px 0.4px 0px #f0f0f0e8;
+  padding-top: 17px;
+  font-family: MS Sans Serif;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px; 
+
+}
+
+
 
 .Button{
   width: 76px;
