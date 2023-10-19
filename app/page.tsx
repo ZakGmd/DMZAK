@@ -20,6 +20,26 @@ export default function Home() {
  
   return (
     <>
+     <div className={styles.Nav}>
+      <div className={styles.LeftNavContent}>
+        <Image src="/NavLogo.svg" alt={'..'} height={24} width={24} />
+        <div className={styles.NavText}>Dummy</div>
+      </div>
+      <div className={styles.RightNavContent}>
+        <div className={styles.RightIcon}>
+          <div className={styles.InsideIcon}></div>
+        </div>
+        <div className={styles.RightIcon}>
+          <div className={styles.InsideIcon2}></div>
+        </div>
+        <div className={styles.RightIcon}>
+          <div className={styles.InsideIcon3}></div>
+        </div>
+
+
+      </div>
+
+     </div>
      <main className={styles.main}>
         <div className={styles.LeftContent}>
           {receivedData && receivedData.slice(0,4).map((index)=>
