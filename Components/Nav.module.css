@@ -25,6 +25,7 @@
     justify-content: center;
     align-items: center;
     background:  #C0C0C0 ;
+    cursor: pointer;
     box-shadow: 2px 2px 0px 0px #DFDFDF inset, -2px -2px 0px 0px #808080 inset, 1px 1px 0px 0px #FFF inset, -1px -1px 0px 0px #0A0A0A inset;
   }
   .InsideIcon{
@@ -50,6 +51,7 @@
     height: 9px;
     background: #000;
     transform: rotateZ(45);
+    
   }
   
   .NavText{

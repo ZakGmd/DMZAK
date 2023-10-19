@@ -1,5 +1,6 @@
 "use client"
 import Footer from '@/Components/Footer'
+import UserModal from '@/Components/UserModal'
 import Link from 'next/link'
 import Image from 'next/image'
 import styles from './page.module.css'
@@ -12,21 +13,32 @@ import Avatar from '@/Components/Avatar'
 export default function Home() {
 
   const [receivedData, setReceivedData] = useState<UserData[]>();
-  const [name , setName] = useState<{first: string , last: string} | null>(null)
+  const [name , setName] = useState<{first: string , last: string} | null>(null) ; 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+
 
   function dataLoaded(data: UserData[]){
     setReceivedData(data);
+    
   }
 
   function selectedName(name :{first: string , last: string}){
 
-    setName(name)
+    setName(name);
+    setIsModalOpen(true) ;
 
   }
+
+  function onCloseModale(){
+    setIsModalOpen(false) ;
+  }
+  
+
  
   return (
     <>
-     <NavBar selectedName={name}/>
+     <NavBar selectedName={name} onCloseModale={onCloseModale}/>
      <main className={styles.main}>
         <div className={styles.LeftContent}>
           {receivedData && receivedData.slice(0,4).map((index)=>
@@ -42,7 +54,7 @@ export default function Home() {
           
           
         </div>
-     
+        <UserModal selectedName={name} onCloseModale={onCloseModale} isModalOpen={isModalOpen} />
     </main>
     <Footer onData={dataLoaded}/>
     </>

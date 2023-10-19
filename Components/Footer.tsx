@@ -1,4 +1,4 @@
-'use client' ;
+
 
 import { UserData } from '@/app/types/type';
 import Image from 'next/image'
