@@ -1,24 +1,44 @@
-
+"use client"
+import Footer from '@/Components/Footer'
 import Link from 'next/link'
 import styles from './page.module.css'
+import { UserData } from './types/type'
+import { useState } from 'react';
 
 
-async function getName() {
+export default function Home() {
+  const [receivedData, setReceivedData] = useState<UserData[]>();
 
-  const res = await fetch('https://retoolapi.dev/Sa6CV9/dummyzak')
-  if(!res.ok){
-    throw new Error('Failed to fetch data')
-  }    
-  return res.json()
-}
-export default async function Home() {
-  const data = await getName() ;
-  console.log(data)
+  const dataLoaded = (data: UserData[]) =>{
+    console.log("this is the parent Component",data) ;
+    setReceivedData(data);
+  }
+ 
+  
+  
+ 
   return (
-    <main className={styles.main}>
+    <>
+     <main className={styles.main}>
       <div className={styles.Button}>
-        <Link href={'/'} className={styles.link} onClick={getName}>Click</Link>
+        <Link href={'/'} className={styles.link}>Click</Link>
+       
       </div>
+      {receivedData && (
+        <div className={styles.Data}>
+          
+         
+            {receivedData.map((item) => (
+              <div key={item.id}>
+                {item.first} {item.last}
+              </div>
+            ))}
+          
+        </div>
+      )}
     </main>
+    <Footer onData={dataLoaded}/>
+    </>
+   
   )
 }
