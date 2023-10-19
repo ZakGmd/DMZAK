@@ -4,42 +4,29 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './page.module.css'
 import { UserData } from './types/type'
-import { useState } from 'react';
+import { use, useState } from 'react';
+import NavBar from '@/Components/NavBar'
+import Avatar from '@/Components/Avatar'
 
 
 export default function Home() {
-  const [receivedData, setReceivedData] = useState<UserData[]>();
 
-  const dataLoaded = (data: UserData[]) =>{
-    console.log("this is the parent Component",data) ;
+  const [receivedData, setReceivedData] = useState<UserData[]>();
+  const [name , setName] = useState<{first: string , last: string} | null>(null)
+
+  function dataLoaded(data: UserData[]){
     setReceivedData(data);
   }
- 
-  
-  
+
+  function selectedName(name :{first: string , last: string}){
+
+    setName(name)
+
+  }
  
   return (
     <>
-     <div className={styles.Nav}>
-      <div className={styles.LeftNavContent}>
-        <Image src="/NavLogo.svg" alt={'..'} height={24} width={24} />
-        <div className={styles.NavText}>Dummy</div>
-      </div>
-      <div className={styles.RightNavContent}>
-        <div className={styles.RightIcon}>
-          <div className={styles.InsideIcon}></div>
-        </div>
-        <div className={styles.RightIcon}>
-          <div className={styles.InsideIcon2}></div>
-        </div>
-        <div className={styles.RightIcon}>
-          <div className={styles.InsideIcon3}></div>
-        </div>
-
-
-      </div>
-
-     </div>
+     <NavBar selectedName={name}/>
      <main className={styles.main}>
         <div className={styles.LeftContent}>
           {receivedData && receivedData.slice(0,4).map((index)=>
@@ -48,12 +35,7 @@ export default function Home() {
             
           <div className={styles.LeftContentItems} key={index.id}>
 
-            <div className={styles.LeftContentItems}>
-            <div className={styles.LeftContentInsideItemsName}>
-              {index.first}
-            </div>
-            <Image src="/UserAvatar.svg" alt={'..'} height={24} width={24} />
-            </div>
+            <Avatar index={index} onNameClick={selectedName} />
           </div>
 
           ))}
