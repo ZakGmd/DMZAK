@@ -22,15 +22,21 @@ export default function Home() {
     <>
      <main className={styles.main}>
         <div className={styles.LeftContent}>
-          <div className={styles.LeftContentItems}>
+          {receivedData && receivedData.slice(0,4).map((index)=>
+          
+          (
+            
+          <div className={styles.LeftContentItems} key={index.id}>
 
             <div className={styles.LeftContentItems}>
             <div className={styles.LeftContentInsideItemsName}>
-              Firstname
+              {index.first}
             </div>
             <Image src="/UserAvatar.svg" alt={'..'} height={24} width={24} />
             </div>
           </div>
+
+          ))}
           
           
         </div>
