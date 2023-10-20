@@ -1,4 +1,4 @@
-
+import Draggable from 'react-draggable';
 import React, { useState } from 'react'
 import Image from 'next/image';
 import NavBar from './NavBar';
@@ -21,7 +21,9 @@ export default function UserModal({selectedName , onCloseModale , isModalOpen}: 
   return (
 
     <>
-    <div className={styles.ModalContainer}>
+    <Draggable>
+        
+       <div className={styles.ModalContainer}>
         <NavBar selectedName={selectedName} onCloseModale={onCloseModale}  />
         <div className={styles.ModalInsideContainer}>
             <div className={styles.ModalInsideContainerLeftItems}>
@@ -36,7 +38,9 @@ export default function UserModal({selectedName , onCloseModale , isModalOpen}: 
 
         </div>
 
-    </div>
+        </div> 
+    </Draggable>
+    
     
     </>
   )

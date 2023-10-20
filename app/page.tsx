@@ -16,7 +16,7 @@ export default function Home() {
   const [name , setName] = useState<{first: string , last: string} | null>(null) ; 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-
+  
 
   function dataLoaded(data: UserData[]){
     setReceivedData(data);
