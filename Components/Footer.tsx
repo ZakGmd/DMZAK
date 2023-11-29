@@ -6,14 +6,9 @@ import Link from 'next/link'
 import { cache } from 'react';
 import styles from '../Components/Footer.module.css'
 
-interface ChildComponentProps {
-    
+interface ChildComponentProps {   
     onData: (data: UserData[] ) => void;
-
-  }
-
-
-
+ }
 
 export default function Footer({onData} : ChildComponentProps) {
     

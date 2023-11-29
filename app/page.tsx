@@ -15,44 +15,28 @@ export default function Home() {
   const [receivedData, setReceivedData] = useState<UserData[]>();
   const [name , setName] = useState<{first: string , last: string} | null>(null) ; 
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  
-
   function dataLoaded(data: UserData[]){
     setReceivedData(data);
     
   }
-
   function selectedName(name :{first: string , last: string}){
-
     setName(name);
     setIsModalOpen(true) ;
-
   }
-
   function onCloseModale(){
     setIsModalOpen(false) ;
-  }
-  
-
- 
+  } 
   return (
     <>
      <NavBar selectedName={name} onCloseModale={onCloseModale}/>
      <main className={styles.main}>
         <div className={styles.LeftContent}>
-          {receivedData && receivedData.slice(0,4).map((index)=>
-          
-          (
-            
+          {receivedData && receivedData.slice(0,4).map((index)=>  
+          (  
           <div className={styles.LeftContentItems} key={index.id}>
-
             <Avatar index={index} onNameClick={selectedName} />
           </div>
-
           ))}
-          
-          
         </div>
         <UserModal selectedName={name} onCloseModale={onCloseModale} isModalOpen={isModalOpen} />
     </main>
