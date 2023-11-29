@@ -22,7 +22,7 @@ export default function UserModal({selectedName , onCloseModale , isModalOpen}: 
 
     <>
     <Draggable>
-        
+
        <div className={styles.ModalContainer}>
         <NavBar selectedName={selectedName} onCloseModale={onCloseModale}  />
         <div className={styles.ModalInsideContainer}>
@@ -37,6 +37,9 @@ export default function UserModal({selectedName , onCloseModale , isModalOpen}: 
             </div>
 
         </div>
+        <form>
+            <input type='text' placeholder='enter a text '/>
+        </form>
 
         </div> 
     </Draggable>

@@ -14,7 +14,7 @@ export default function Avatar({ index , onNameClick}: AvatarListProps) {
     }
   return (
     <>
-
+  
     
     <div className={styles.LeftContentItems} onClick={HnadleClick} >
     <div className={styles.LeftContentInsideItemsName}>
